@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="MarkdownPreview.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MarkdownPreview"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="OnLoaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <WebView Grid.Row="0" Grid.ColumnSpan="2" x:Name="wvView" Margin="20,10,20,10"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Padding="20,10,10,20">
+            <ToggleSwitch x:Uid="dark" x:Name="tsDark"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Padding="10,10,20,10">
+            <AppBarButton Icon="Help" x:Uid="about" VerticalAlignment="Center" x:Name="bAbout" Click="OpenAbout"/>
+            <AppBarButton Icon="Document" x:Uid="document" VerticalAlignment="Center" x:Name="bDocument" Click="CloseAbout"/>
+        </StackPanel>
+    </Grid>
+</Page>
